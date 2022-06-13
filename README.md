@@ -12,4 +12,4 @@
 * Create a react project
   * Build local react
   * setup heroku post build
-  * 
+  * change backend routes to /api/
