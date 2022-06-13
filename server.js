@@ -17,6 +17,7 @@ app.listen(port, ()=>{
 
 //MIDDLEWARE
 app.use(express.urlencoded({extended:true}))
+app.use(express.static("./frontend/dist"))
 
 
 // TEST ROUTE

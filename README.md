@@ -1,8 +1,7 @@
 # Holiday
-
 # MERN Stack
 
-## Express on Heroku
+## Expres on Heroku
 
 * git init + gitignore
 * Express Hello World
@@ -11,3 +10,4 @@
   * dotenv - PORT
 * Deploy to heroku
 * Create a react project
+  * Build local React 
