@@ -21,10 +21,8 @@ app.use(express.static("./frontend/dist"))
 
 
 // TEST ROUTE
-app.get("/", (req, res)=>{
+app.get("/api/", (req, res)=>{
     res.send("HELLO WORLD")
 })
 
-app.get("/test", (req,res)=>{
-    res.send("TEST WORLD")
-})
+
