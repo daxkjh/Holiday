@@ -3,12 +3,11 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const mongooose = require("mongoose")
-mongoURI= process.env.MONGO_URI || "mongodb+srv://daxkjh:ILoveMongoDB@cluster0.ysvpp.mongodb.net/"
+mongoURI= process.env.MONGO_URI 
 
 
 //CONFIG
-port = process.env.PORT || 3000
-
+port = process.env.PORT || 2000
 
 
 //LISTENER
@@ -23,4 +22,8 @@ app.use(express.urlencoded({extended:true}))
 // TEST ROUTE
 app.get("/", (req, res)=>{
     res.send("HELLO WORLD")
+})
+
+app.get("/test", (req,res)=>{
+    res.send("TEST WORLD")
 })
