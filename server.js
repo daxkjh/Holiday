@@ -4,6 +4,7 @@ const express = require("express")
 const app = express()
 const mongooose = require("mongoose")
 mongoURI= process.env.MONGO_URI 
+const path = require("path")
 
 
 //CONFIG
@@ -25,4 +26,6 @@ app.get("/api/", (req, res)=>{
     res.send("HELLO WORLD")
 })
 
-
+app.get("/*", (req,res)=>{
+    res.sendFile(path.join(__dirname,"./frontend/dist/index.html"))
+})

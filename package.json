@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "frontend-install": "cd frontend && npm install --production=false", 
+    "frontend-install": "cd frontend && npm install --production=false",
     "frontend-build": "cd frontend && npm run build",
     "heroku-postbuild": "npm run frontend-install && npm run frontend-build",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,6 +25,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.3.6",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "react-router-dom": "^6.3.0"
   }
 }

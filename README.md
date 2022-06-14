@@ -1,7 +1,7 @@
 # Holiday
 # MERN Stack
 
-## Expres on Heroku
+## Express on Heroku
 
 * git init + gitignore
 * Express Hello World
@@ -13,3 +13,11 @@
   * Build local react
   * setup heroku post build
   * change backend routes to /api/
+
+  ## React
+
+
+CRUD - create read update delete holidays
+Login Page - / 
+Master Page - /holidays/
+Detail Page - /holidays/:id
