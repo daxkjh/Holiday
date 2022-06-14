@@ -14,7 +14,7 @@ const Login =()=>{
                     <label htmlFor="username">Username</label>
                     <input type="text" name="username" id="username"/><br></br>
                     <label htmlFor="password">password</label>
-                    <input type="text" name="password" id="password"/><br></br>
+                    <input type="password" name="password" id="password"/><br></br>
                     <input type="submit" value='Login' />
                 </fieldset>
             </form>
