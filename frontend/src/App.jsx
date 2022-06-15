@@ -1,25 +1,28 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
-import Login from './pages/Login'
-import Main from './pages/Main'
-import Detail from './pages/Details'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import debug from "debug";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Detail from "./pages/Detail";
+import Login from "./pages/Login";
+import Main from "./pages/Main";
+import { atom } from "jotai";
+
+const log = debug("simon:frontend:App");
+export const userAtom = atom({})
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
+    <>
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Login />}/>
-      <Route path='/holidays' element={<Main />}/>
-      <Route path='/holidays/:id' element={<Detail />}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Login />} />
+            <Route path="holidays" element={<Main />} />
+            <Route path="holidays/:id" element={<Detail />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;

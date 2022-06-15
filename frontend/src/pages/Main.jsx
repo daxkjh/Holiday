@@ -1,19 +1,20 @@
 import Navbar from "../components/Navbar";
+import CreateHolidayForm from "../components/CreateHolidayForm";
+import { Link } from "react-router-dom";
+
+
+
 function Main() {
+
+
     return (
       <>
-      <Navbar/>
+      {/* <Navbar/> */}
       <main>
         <section>
           <h1>Holidays! Celebrate!</h1>
-          <form>
-            <fieldset>
-              <legend>Add</legend>
-              <label htmlFor="holiday">Name</label>
-              <input id="holiday" name="holiday" />
-              <button>Add a reason to celebrate</button>
-            </fieldset>
-          </form>
+          <CreateHolidayForm />
+    
         </section>
         <section>
           <table>
@@ -33,6 +34,13 @@ function Main() {
               </tr>
               <tr>
                 <td>Bathtub Party Day</td>
+                <td>12583</td>
+                <td>Like</td>
+                <td>Edit</td>
+                <td>Delete</td>
+              </tr>
+              <tr>
+                <td><Link to="/holidays/birthday">birthday</Link></td>
                 <td>12583</td>
                 <td>Like</td>
                 <td>Edit</td>
