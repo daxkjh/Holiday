@@ -42,3 +42,10 @@ Delete - DELETE - /api/holidays/:id
 
 * Hide Detail Link when not logged in
 * Direct access to Detail URL is bounced out
+
+## Big React Libraries for Project
+
+* Component libraries
+* Map / Chart / Calendar
+* Validation
+* React Query

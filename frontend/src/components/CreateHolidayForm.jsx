@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-function CreateHolidayForm() {
+function CreateHolidayForm({ setLastId }) {
   const [name, setName] = useState("");
 
   const handleClick = () => {
-    console.log("click", name);
     fetch("/api/holidays/", {
       method: "POST",
       headers: {
@@ -13,7 +12,10 @@ function CreateHolidayForm() {
       body: JSON.stringify({ name }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        setLastId(data._id);
+        setName("");
+      });
   };
 
   return (
@@ -27,7 +29,9 @@ function CreateHolidayForm() {
         maxLength={10}
         onChange={(event) => setName(event.target.value)}
       />
-      <button disabled={name.length === 0} onClick={handleClick}>Add a reason to celebrate</button>
+      <button disabled={name.length === 0} onClick={handleClick}>
+        Add a reason to celebrate
+      </button>
     </fieldset>
   );
 }

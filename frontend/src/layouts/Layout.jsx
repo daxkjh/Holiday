@@ -7,20 +7,19 @@ function Layout() {
 
   return (
     <>
-    <p>Hi { user.name} </p>
       <nav>
         <ul>
           <li>
-            <Link to="/">Login</Link>
+            <Link to="/">Main</Link>
           </li>
           <li>
-            <Link to="/holidays/">Main</Link>
+            <Link to="/holidays/">Holidays</Link>
           </li>
-          <li>
-            {user.name ? (
-              <Link to="/holidays/62a950b94c3fbabc57bfabc9">Detail</Link>
-            ) : null}
-          </li>
+          {user.name ? (
+            <li>
+              <Link to="/holidays/62a95260d334fce1be1c17cf">Detail</Link>
+            </li>
+          ) : null}
         </ul>
       </nav>
       <Outlet />
