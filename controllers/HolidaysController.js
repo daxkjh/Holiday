@@ -5,9 +5,22 @@ const Holidays = require("../models/Holidays");
 const router = express.Router();
 
 //index
-router.get("/", (req, res) => {
-  res.send("INDEX");
-});
+router.get("/", async (req, res) => {
+
+  if (!req.session.user) {
+    res.status(401).send({ "message" : "user unauthorized"})
+  } else {
+     try {
+      const holiday = await Holidays.find()
+      if (holiday == null) {
+        res.status(404).send({"message" : "No Items Yet"})
+      } else {
+        res.send({status: "success", data: holiday}) 
+      }
+  } catch (error) {
+    res.send(error)
+  }}
+ });
 
 router.post("/", async (req, res) => {
   // if (req.body.likes < 0){

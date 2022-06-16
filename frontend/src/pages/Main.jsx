@@ -1,10 +1,19 @@
 import Navbar from "../components/Navbar";
 import CreateHolidayForm from "../components/CreateHolidayForm";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { response } from "express";
 
 
 
 function Main() {
+  const [holidays, setHolidays] = useState([])
+
+  useEffect( async ()=>{
+    const response = await fetch ("/api/holidays")
+    const data = await response.json()
+    setHolidays(data.data)
+  },[])
 
 
     return (
@@ -12,6 +21,7 @@ function Main() {
       {/* <Navbar/> */}
       <main>
         <section>
+          <h1>Main Page</h1>
           <h1>Holidays! Celebrate!</h1>
           <CreateHolidayForm />
     
@@ -25,6 +35,15 @@ function Main() {
               </tr>
             </thead>
             <tbody>
+              {holidays.map((x)=>{
+                    <tr>
+                    <td>{holidays.name}</td>
+                    <td>{holidays.likes}</td>
+                    <td>Like</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                  </tr>
+              })}
               <tr>
                 <td>World Kindness Day</td>
                 <td>9999</td>

@@ -7,9 +7,10 @@ const Detail = () => {
   const {id} = useParams()
   const navigate = useNavigate();
 
-  if (id !== "admin") {
+  useEffect(()=>{
+    if (id !== "admin") {
     navigate("/")
-  }
+  }}, [])
 
 
   useEffect(() => {

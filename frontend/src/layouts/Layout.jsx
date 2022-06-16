@@ -11,14 +11,14 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Main</Link>
+            <Link to="/">Login</Link>
           </li>
           <li>
-            <Link to="/holidays/">Holidays</Link>
+            <Link to="/holidays/">Main</Link>
           </li>
           <li>
             {user.name ? (
-              <Link to="/holidays/62a95260d334fce1be1c17cf">Detail</Link>
+              <Link to="/holidays/62a950b94c3fbabc57bfabc9">Detail</Link>
             ) : null}
           </li>
         </ul>
